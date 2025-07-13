@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Addphone from './components/Addphone';
+import Searchphone from './components/Searchphone';
+import Deletephone from './components/Deletephone';
+import Viewphone from './components/Viewphone';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Addphone/>}/>
+      <Route path='/s' element={<Searchphone/>}/>
+      <Route path='/d' element={<Deletephone/>}/>
+      <Route path='/v' element={<Viewphone/>}/>
+    </Routes>
+    </BrowserRouter>
+    
   );
 }
 
